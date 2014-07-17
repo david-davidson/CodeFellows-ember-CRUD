@@ -28,7 +28,7 @@ App.IndexController = Ember.ObjectController.extend({
                 return pattern.test(email);
             }
             var shouldSave = true;
-            if (entry.firstName == '') {
+            if (entry.firstName === '') {
                 alert('Sorry: first name is required');
                 shouldSave = false;
             }

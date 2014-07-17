@@ -1,21 +1,26 @@
+// I've never used Ember before--please forgive any poor style!
+
+// Create the app
 App = Ember.Application.create();
 
+ // Grab saved users if possible; if not, set some default initial values
 var users = JSON.parse(localStorage.getItem('users')) || [{
     firstName: 'Jeff',
     lastName: 'Goldblum',
     email: 'jeff@jeffgoldblum.com',
-    access: 'Admin',
-    id: '0' // Saved users if possible; if not, default initial values
+    access: 'Admin'
 }];
 
+// Create the model
 App.IndexRoute = Ember.Route.extend({
     model: function() {
         return users;
     }
 });
 
+// Create the controller
 App.IndexController = Ember.ObjectController.extend({
-    accessLevels: ['Admin', 'Write', 'Edit', 'Read'], // The options for the access dropdown
+    accessLevels: ['Admin', 'Write', 'Edit', 'Read'], // Options for the access dropdown
     save: function() {
         var entry = {};
         entry.firstName = this.get('firstName');
@@ -24,7 +29,7 @@ App.IndexController = Ember.ObjectController.extend({
         entry.access = this.get('access');
         function valid(entry) {
             function validEmail(email) {
-                var pattern = /\S+@\S+\.\S+/;
+                var pattern = /\S+@\S+\.\S+/; // Obviously not a perfect regex, but enough to weed out typos
                 return pattern.test(email);
             }
             var shouldSave = true;

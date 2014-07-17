@@ -1,0 +1,42 @@
+.ember-application {
+    font-size: 1.3em;
+    font-family: 'Open Sans';
+    text-align: center;
+    color: white;
+    background-color: #3c6dc5;
+    h1, h2 {
+        font-family: 'Montserrat';
+    }
+    input, select, button {
+        font-size: 1em;
+        font-family: 'Open Sans';
+    }
+    input, select {
+        color: rgb(75,75,75);
+        border: 0;
+    }
+    input {
+        padding: 5px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: rgb(225,0,0);
+        color: white;
+        border: 0;
+        margin-top: 20px;
+        &:hover {
+            background-color: rgb(255,0,0);
+        }
+    }
+    .UI {
+        width: 600px;
+        text-align: left;
+        display: inline-block;
+    }
+    .delete, select, button {
+        cursor: pointer;
+    }
+    .delete {
+        float: right;
+    }
+}

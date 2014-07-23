@@ -54,6 +54,7 @@ App.IndexController = Ember.ObjectController.extend({
             this.set('lastName', '');
             this.set('email', '');
             this.set('editing', false);
+            this.set('access', 'Admin'); // The default
             document.activeElement.blur(); // Unfocus the form
         }
     },
